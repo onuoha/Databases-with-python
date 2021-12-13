@@ -15,8 +15,8 @@ fh = open(fname)
 for line in fh:
     if not line.startswith('From: '):
         continue
-    pieces = line.split('@')
-    org = pieces[1]
+    pieces = line.split('@')                 #splits from the point where the lines of code contains '@'
+    org = pieces[1]                          #retrieves the first piece of code after the split.
     
     cur.execute('SELECT count FROM Counts WHERE org = ?',(org,))
     row = cur.fetchone()
