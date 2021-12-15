@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import sqlite3
 
 conn = sqlite3.connect('trackdb.sqlite')
-cur = conn.cursor()
+cur = conn.cursor()                         # Generally like the file handle to the database server.
 
 # Make some fresh tables using executescript()
 cur.executescript('''
